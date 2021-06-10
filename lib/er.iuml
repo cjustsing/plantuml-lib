@@ -108,7 +108,7 @@ hide stereotypes
 ' create_by、created_time、update_by、updated_time
 !global CREATE = Column("create_by", "BIGINT[20]") + "\n" + Column("created_time", "TIMESTAMP")
 !global UPDATE = Column("update_by", "BIGINT[20]") + "\n" + Column("updated_time", "TIMESTAMP")
-!global CREATEANDUPDATE = CREATE + "\n" + UPDATE
+!global CREATE_AND_UPDATE = CREATE + "\n" + UPDATE
 
 
 ' 主键类型
