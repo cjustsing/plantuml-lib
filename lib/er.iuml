@@ -85,7 +85,7 @@ hide stereotypes
 '' @param mixed $defVal 缺省值 无缺省值时传空字符串""，缺省值为空字符串时传单引号"''"
 '' @param string $label 列标题
 '' @param string $desc 详细描述
-'' 
+''
 !function Column($name, $type, $notNull=0, $defVal="", $label="", $desc="")
     !$val = ""
     !if ($notNull == 1)
@@ -105,8 +105,11 @@ hide stereotypes
 ' Constants
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-' created_at、updated_at、deleted_at三列
-!global TIMESTAMPS = Column("created_at", "TIMESTAMP") + "\n" + Column("updated_at", "TIMESTAMP") + "\n" + Column("deleted_at", "TIMESTAMP")
+' create_by、created_time、update_by、updated_time
+!global CREATE = Column("create_by", "BIGINT[20]") + "\n" + Column("created_time", "TIMESTAMP")
+!global UPDATE = Column("update_by", "BIGINT[20]") + "\n" + Column("updated_time", "TIMESTAMP")
+!global CREATEANDUPDATE = CREATE + "\n" + UPDATE
+
 
 ' 主键类型
 !global PK_TYPE = UN("BIGINT[20]")
